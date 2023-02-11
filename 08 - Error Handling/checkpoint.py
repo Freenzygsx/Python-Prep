@@ -12,7 +12,27 @@ def Factorial(numero):
         Factorial(-2) debe retornar nulo
     '''
     #Tu código aca:
-    return 'Funcion incompleta'
+    # if type(numero) == int:
+    #     if numero <=0:
+    #         return "Debe ser mayor a 0"
+    #     if numero > 1:
+    #         numero = numero * Factorial(numero-1)
+    #         return numero
+    # else:
+    #     return 'Nulo' 
+    #Para que mi yo del futuro descubra por que esta version no sirve y la de abajo si
+    
+    if type(numero) != int:
+        return "El numero no es factible para sacar su factorial, debe ser entero y no negativo."
+    else:
+        if numero <= 0:
+            return "el numero debe ser mayor a 0"
+        if numero > 1:
+            numero = numero * Factorial(numero-1)
+        return numero
+    
+print(Factorial(4))
+print(Factorial(-2))
 
 def EsPrimo(valor):
     '''
@@ -26,7 +46,18 @@ def EsPrimo(valor):
         EsPrimo(8) debe retornar False
     '''
     #Tu código aca:
-    return 'Funcion incompleta'
+    contador = 0
+    contadorFinal = valor
+    while contadorFinal != 1:
+        if valor % contadorFinal == 0:
+            contador += 1
+        contadorFinal -= 1
+    if contador > 1:
+        return False
+    else:
+        return True
+print(EsPrimo(7))
+print(EsPrimo(8))
     
 def ClaseAnimal(especie, color):
     '''
@@ -47,4 +78,25 @@ def ClaseAnimal(especie, color):
         a.CumpliAnios() -> debe devolver 3
     '''
     #Tu código aca:
-    return 'Funcion incompleta'
+    class Animal:
+        def __init__(self, especie,color):
+            self.especie = especie
+            self.color = color
+            self.edad = 0
+        def cumplirAnios(self):
+            self.edad += 1
+            print(self.edad)
+    
+    a = Animal(especie, color)
+
+    return a
+
+
+AnimalSabrosote = ClaseAnimal('Rata', 'Roja oscura')
+print(AnimalSabrosote.color)
+AnimalSabrosote.cumplirAnios()
+AnimalSabrosote.cumplirAnios()
+AnimalSabrosote.cumplirAnios()
+AnimalSabrosote.cumplirAnios()
+AnimalSabrosote.cumplirAnios()
+AnimalSabrosote.cumplirAnios()
